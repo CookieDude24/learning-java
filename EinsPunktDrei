@@ -1,0 +1,98 @@
+public class EinsPunktDrei {
+    public static void main(String[] args) {
+        int w,i,einserstelle,zehnerstelle;
+        for(i=80;i>0;i--)
+        {
+            w = (int) (Math.random()*79+20);
+            einserstelle = w%10;
+            zehnerstelle = w/10;
+            switch (einserstelle){
+                case(1):
+                {
+                    System.out.print("einund");
+                    break;
+                }
+                case(2):
+                {
+                    System.out.print("zweiund");
+                    break;
+                }
+                case(3):
+                {
+                    System.out.print("dreiund");
+                    break;
+                }
+                case(4):
+                {
+                    System.out.print("vierund");
+                    break;
+                }
+                case(5):
+                {
+                    System.out.print("fünfund");
+                    break;
+                }
+                case(6):
+                {
+                    System.out.print("sechsund");
+                    break;
+                }
+                case(7):
+                {
+                    System.out.print("siebenund");
+                    break;
+                }
+                case(8):
+                {
+                    System.out.print("achtund");
+                    break;
+                }
+                case(9):
+                {
+                    System.out.print("neunund");
+                }
+            }
+            switch (zehnerstelle){
+                case(2):
+                {
+                    System.out.println("zwanzig");
+                    break;
+                }
+                case(3):
+                {
+                    System.out.println("dreißig");
+                    break;
+                }
+                case(4):
+                {
+                    System.out.println("vierzig");
+                    break;
+                }
+                case(5):
+                {
+                    System.out.println("fünfzig");
+                    break;
+                }
+                case(6):
+                {
+                    System.out.println("sechzig");
+                    break;
+                }
+                case(7):
+                {
+                    System.out.println("siebzig");
+                    break;
+                }
+                case(8):
+                {
+                    System.out.println("achtzig");
+                    break;
+                }
+                case(9):
+                {
+                    System.out.println("neunzig");
+                }
+            }
+        }
+    }
+}
