@@ -1,0 +1,60 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class DreiPunktZwei {
+    public static void main(String[] args) {
+        char[] alphabet;
+        char[] input_als_array;
+        String input;
+        String alphabet_vorlage = "abcdefghijklmnopqrstuvwxy";
+
+        alphabet = alphabet_vorlage.toCharArray();
+
+        System.out.print("String eingeben: ");
+
+        input = readString();
+        input = input.toLowerCase();
+        input_als_array = input.toCharArray();
+
+        int counter;
+
+        for(char letter :alphabet)
+        {
+            counter = 0;
+
+            for(int index = input_als_array.length-1;index>=0;index--)
+            {
+                if(letter==input_als_array[index])
+                    counter++;
+
+            }
+
+            if(counter>0) {
+                System.out.print(letter + ": " + counter + " ");
+                for(int i = counter; i>0;i--)
+                    System.out.print("*");
+                System.out.println();
+            }
+        }
+    }
+
+    public static String readString()
+    {
+        BufferedReader br;
+        String inputString = "";
+
+        br = new BufferedReader(new InputStreamReader(System.in));
+
+        try
+        {
+            inputString = br.readLine();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Lesefehler!");
+        }
+
+        return inputString;
+    }
+}
