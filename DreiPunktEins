@@ -1,0 +1,75 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class DreiPunktEins {
+    public static void main(String[] args) {
+        int[] a = new int[3];
+        int[] a2 = new int[3];
+
+        for(int i=0;i<3;i++)
+        {
+            System.out.print("Zahl eingeben: ");
+            a[i]=readInt();
+        }
+        System.out.println("neue for schleife");
+        for(int k:a)
+        {
+            System.out.println("Zahl: "+k);
+        }
+        System.out.println("herkömmliche for schleife");
+        for(int i=0;i<3;i++)
+        {
+            System.out.println("Zahl: "+a[i]);
+        }
+
+        System.arraycopy(a,0,a2,0,3);
+        System.out.println("kopiertes array");
+        for(int k:a2)
+        {
+            System.out.println("Zahl: "+k);
+        }
+
+        Arrays.fill(a2,2);
+        System.out.println("Array voller 2");
+        for(int k:a2)
+        {
+            System.out.println("Zahl: "+k);
+        }
+
+        System.out.println("ist array voller 2 gleich dem mit den eigebenen zahlen?");
+        System.out.println(Arrays.equals(a,a2));
+
+        Arrays.sort(a);
+        System.out.println("Der größe nach geordnete array");
+        for(int k:a)
+        {
+            System.out.println("Zahl: "+k);
+        }
+
+    }
+    public static int readInt()
+    {
+        BufferedReader br;
+        String inputString;
+        int value = 0;
+
+        br = new BufferedReader(new InputStreamReader(System.in));
+
+        try
+        {
+            inputString = br.readLine();
+            value = Integer.parseInt(inputString);
+        }
+        catch(IOException e)
+        {
+            System.out.println("Lesefehler !");
+        }
+        catch(NumberFormatException ex)
+        {
+            System.out.println("Sie haben keinen int-Wert eingegeben !");
+        }
+        return value;
+    }
+}
