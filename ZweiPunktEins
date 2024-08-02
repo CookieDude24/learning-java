@@ -1,0 +1,55 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ZweiPunktEins {
+    public static void main(String[] args) {
+        String s1;
+        String s2;
+        System.out.print("EINGABE: ");
+        s1 = readString();
+
+        try {
+            System.out.println("Char an 3. Stelle: " + s1.charAt(2));
+            System.out.println("Zeichen von 2. bis 5. Stelle: " + s1.substring(1,5));
+            System.out.println("Länge des Strings: " + s1.length());
+            System.out.println("Ist der String gleich \"LEBERKÄSESEMMERL\"? " + s1.equals("LEBERKÄSESEMMERL"));
+            System.out.println("Erstes auftreten des Buchstabens \"E\": " + s1.indexOf("E"));
+            System.out.println("Der Int 1 in Stringform:" + String.valueOf(1878));
+
+            s2 = s1.toUpperCase();
+            if (s1.equals(s2))
+                System.out.println("String ist nur aus Großbuchstaben");
+            else if (s1.equals(s2.toLowerCase())) {
+                System.out.println("String ist nur aus Kleinbuchstaben");
+            }
+            else {
+                System.out.println("String ist gemischt Groß/Klein geschrieben");
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("FEHLER: " + e);
+        }
+        System.out.println("Eingegeben wurde: " + s1);
+    }
+
+    public static String readString()
+    {
+        BufferedReader br;
+        String inputString = "";
+
+        br = new BufferedReader(new InputStreamReader(System.in));
+
+        try
+        {
+            inputString = br.readLine();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Lesefehler!");
+        }
+
+        return inputString;
+    }
+}
